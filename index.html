@@ -101,12 +101,19 @@
               </div>
               <div class="field">
                 <label for="state">State <span aria-hidden="true">*</span></label>
-                <input id="state" name="state" type="text" value="Odisha" readonly required />
+                <select id="state" name="state" required>
+                  <option value="">Select state</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Asham">Asham</option>
+                </select>
                 <p class="field-error" id="state-error" role="alert"></p>
               </div>
-              <div class="field">
+              <div class="field" id="district-field" hidden>
                 <label for="district">District <span aria-hidden="true">*</span></label>
-                <select id="district" name="district" required>
+                <select id="district" name="district" disabled>
                   <option value="">Select district</option>
                   <option value="Keonjhar">Keonjhar</option>
                   <option value="Dhenkanal">Dhenkanal</option>
@@ -116,7 +123,7 @@
                 </select>
                 <p class="field-error" id="district-error" role="alert"></p>
               </div>
-              <div class="field">
+              <div class="field" id="block-field" hidden>
                 <label for="block">Block <span class="optional">(optional)</span></label>
                 <select id="block" name="block" disabled>
                   <option value="">Select district first</option>

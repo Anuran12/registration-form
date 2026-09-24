@@ -11,7 +11,10 @@ const districtBlocks = {
 };
 
 const form = document.querySelector('#registration-form');
+const state = document.querySelector('#state');
+const districtField = document.querySelector('#district-field');
 const district = document.querySelector('#district');
+const blockField = document.querySelector('#block-field');
 const block = document.querySelector('#block');
 const organisationType = document.querySelector('#organisationType');
 const otherOrganisationField = document.querySelector('#other-organisation-field');
@@ -46,12 +49,34 @@ function syncOtherOrganisationField() {
 organisationType.addEventListener('change', syncOtherOrganisationField);
 syncOtherOrganisationField();
 
-district.addEventListener('change', () => {
+function syncBlockOptions() {
   const options = districtBlocks[district.value] || [];
   block.innerHTML = '<option value="">Select block</option>';
   options.forEach((name) => block.add(new Option(name, name)));
   block.disabled = options.length === 0;
-});
+}
+
+function syncStateFields() {
+  const isOdisha = state.value === 'Odisha';
+  districtField.hidden = !isOdisha;
+  blockField.hidden = !isOdisha;
+  district.disabled = !isOdisha;
+  district.required = isOdisha;
+
+  if (!isOdisha) {
+    district.value = '';
+    block.value = '';
+    block.disabled = true;
+    document.querySelector('#district-error').textContent = '';
+    district.removeAttribute('aria-invalid');
+  }
+
+  syncBlockOptions();
+}
+
+state.addEventListener('change', syncStateFields);
+district.addEventListener('change', syncBlockOptions);
+syncStateFields();
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();

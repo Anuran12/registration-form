@@ -4,9 +4,13 @@ export function validateForm(form) {
   const values = Object.fromEntries(new FormData(form).entries());
   const errors = {};
 
-  ['fullName', 'designation', 'organisation', 'organisationType', 'state', 'district', 'email', 'mobile'].forEach((name) => {
+  ['fullName', 'designation', 'organisation', 'organisationType', 'state', 'email', 'mobile'].forEach((name) => {
     if (!String(values[name] || '').trim()) errors[name] = 'This field is required.';
   });
+
+  if (values.state === 'Odisha' && !String(values.district || '').trim()) {
+    errors.district = 'This field is required.';
+  }
 
   if (values.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     errors.email = 'Enter a valid email address.';

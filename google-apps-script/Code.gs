@@ -45,6 +45,14 @@ const ORGANISATION_TYPES = Object.freeze([
   'Other',
 ]);
 
+const STATES = Object.freeze([
+  'Odisha',
+  'Jharkhand',
+  'Delhi',
+  'West Bengal',
+  'Asham',
+]);
+
 const DISTRICT_BLOCKS = Object.freeze({
   Keonjhar: ['Banspal', 'Harichandanpur'],
   Dhenkanal: ['Kankadahad'],
@@ -165,7 +173,7 @@ function validatePayload_(payload) {
     organisationType: requiredString_(payload.organisationType, 'Organisation type', 100),
     otherOrganisationType: string_(payload.otherOrganisationType, 120),
     state: requiredString_(payload.state, 'State', 50),
-    district: requiredString_(payload.district, 'District', 50),
+    district: string_(payload.district, 50),
     block: string_(payload.block, 80),
     email: requiredString_(payload.email, 'Email', 254).toLowerCase(),
     mobile: requiredString_(payload.mobile, 'Mobile number', 10),
@@ -186,12 +194,19 @@ function validatePayload_(payload) {
   if (registration.organisationType === 'Other' && !registration.otherOrganisationType) {
     throw new Error('Please describe the type of organisation.');
   }
-  if (registration.state !== 'Odisha') throw new Error('The selected state is invalid.');
-  if (!Object.prototype.hasOwnProperty.call(DISTRICT_BLOCKS, registration.district)) {
-    throw new Error('Select a valid district.');
+  if (STATES.indexOf(registration.state) === -1) {
+    throw new Error('Select a valid state.');
   }
-  if (registration.block && DISTRICT_BLOCKS[registration.district].indexOf(registration.block) === -1) {
-    throw new Error('Select a valid block for the district.');
+  if (registration.state === 'Odisha') {
+    if (!Object.prototype.hasOwnProperty.call(DISTRICT_BLOCKS, registration.district)) {
+      throw new Error('Select a valid district.');
+    }
+    if (registration.block && DISTRICT_BLOCKS[registration.district].indexOf(registration.block) === -1) {
+      throw new Error('Select a valid block for the district.');
+    }
+  } else {
+    registration.district = '';
+    registration.block = '';
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registration.email)) {
     throw new Error('Enter a valid email address.');
