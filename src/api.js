@@ -2,7 +2,7 @@
 // following the setup steps in README.md. This URL is an endpoint, not a
 // password, and is expected to be visible in the browser.
 const GOOGLE_APPS_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxwpCCGdvV3bpxM3iCxqAgEahmQEXlxuNSnX-IdGVpUQl1XVoDapMjy_EvbQehUi1Ry/exec";
+  "https://script.google.com/macros/s/AKfycbzFB8Q1JgFlZOeIeylTUI8pbDZabzVujKHFrSasO7WlFFz-6Dl0RytpK4FyFa716hQD/exec";
 
 const REQUEST_TIMEOUT_MS = 45000;
 const MAX_ATTEMPTS = 2;
