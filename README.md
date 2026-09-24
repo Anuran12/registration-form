@@ -44,6 +44,10 @@ Use the published HTTPS URL, not a local `file://` or `localhost` URL, to create
 
 The header keeps the CINI and NASCOM Foundation logos in one flex container. Both use proportional sizing at `64px` on desktop and `48px` on mobile, with responsive adjustments for narrow screens.
 
+## Vercel
+
+The `npm run build` command copies the deployable HTML, `src`, and `assets` files into `public/`. The included `vercel.json` sets that directory as Vercel's build output. Repository documentation and the Google Apps Script receiver are intentionally excluded from the public website.
+
 ## Registration storage behavior
 
 The browser sends JSON to the configured Apps Script deployment, then checks the saved submission ID through a read-only status callback before redirecting to `registration-completed.html`. This receipt check avoids showing success merely because a network request was sent. The form retries a temporary failed request once with the same submission ID. Browser validation is repeated by Apps Script, concurrent writes are serialized with a script lock, and spreadsheet-formula prefixes in user input are neutralized.
