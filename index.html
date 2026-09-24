@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CINI and NASSCOM Foundation registration for the Consultation on Access to Empowerment in Bhubaneswar." />
+    <meta name="theme-color" content="#f6f1e8" />
+    <title>CINI | Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script type="module" src="src/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <img src="assets/cisco-csr-logo.svg" alt="Cisco Corporate Social Responsibility" class="cisco-logo" />
+        <div class="header-rule" aria-hidden="true"></div>
+        <div class="logo-container">
+          <a class="brand-link" href="#top" aria-label="CINI registration home">
+            <img src="assets/cini-logo.png" alt="CINI" class="cini-logo" />
+          </a>
+          <img src="assets/nascom-foundation-logo.png" alt="NASCOM Foundation" class="nascom-logo" />
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero shell" aria-labelledby="event-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> CINI in association with NASSCOM Foundation</p>
+          <h1 id="event-title">Consultation on<br /><em>Access to Empowerment</em></h1>
+          <p class="hero-subtitle">E-Governance for PVTGs and Marginalized Communities</p>
+          <div class="event-details" aria-label="Event details">
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#calendar"></use></svg>25 September 2026</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#clock"></use></svg>10:30 AM</span>
+            <span><svg aria-hidden="true"><use href="assets/icons.svg#pin"></use></svg>Hotel Excellency, Bhubaneswar, Odisha</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <span class="art-number">25</span>
+          <span class="art-label">SEP<br />2026</span>
+          <span class="art-line"></span>
+        </div>
+      </section>
+
+      <section class="form-wrap shell" aria-labelledby="registration-title">
+        <div class="form-intro">
+          <div>
+            <p class="section-kicker">Event registration</p>
+            <h2 id="registration-title">Registration Form</h2>
+          </div>
+          <p class="required-note"><span aria-hidden="true">*</span> Required fields</p>
+        </div>
+
+        <form id="registration-form" novalidate>
+          <div class="spam-trap" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <fieldset class="form-section">
+            <legend><span class="section-number">01</span><span>Participant Information</span></legend>
+            <div class="field-grid">
+              <div class="field field-wide">
+                <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" placeholder="Enter your full name" required />
+                <p class="field-error" id="fullName-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="designation">Designation <span aria-hidden="true">*</span></label>
+                <input id="designation" name="designation" type="text" placeholder="Your designation" required />
+                <p class="field-error" id="designation-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="organisation">Organisation/Department <span aria-hidden="true">*</span></label>
+                <input id="organisation" name="organisation" type="text" placeholder="Organisation or department" required />
+                <p class="field-error" id="organisation-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="organisationType">Type of Organisation <span aria-hidden="true">*</span></label>
+                <select id="organisationType" name="organisationType" required>
+                  <option value="">Select organisation type</option>
+                  <option>Government Department</option>
+                  <option>District Administration</option>
+                  <option>PRI / Local Government</option>
+                  <option>NGO / CSO</option>
+                  <option>Community-Based Organisation</option>
+                  <option>Academic / Research Institution</option>
+                  <option>Corporate / Private Sector</option>
+                  <option>Development Partner / Foundation</option>
+                  <option>Media</option>
+                  <option>Other</option>
+                </select>
+                <p class="field-error" id="organisationType-error" role="alert"></p>
+              </div>
+              <div class="field field-wide" id="other-organisation-field" hidden>
+                <label for="otherOrganisationType">Please specify the type of organisation</label>
+                <input id="otherOrganisationType" name="otherOrganisationType" type="text" placeholder="Enter your organisation type" disabled />
+                <p class="field-error" id="otherOrganisationType-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="state">State <span aria-hidden="true">*</span></label>
+                <input id="state" name="state" type="text" value="Odisha" readonly required />
+                <p class="field-error" id="state-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="district">District <span aria-hidden="true">*</span></label>
+                <select id="district" name="district" required>
+                  <option value="">Select district</option>
+                  <option value="Keonjhar">Keonjhar</option>
+                  <option value="Dhenkanal">Dhenkanal</option>
+                  <option value="Raygada">Raygada</option>
+                  <option value="Nuapada">Nuapada</option>
+                  <option value="Gajapati">Gajapati</option>
+                </select>
+                <p class="field-error" id="district-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="block">Block <span class="optional">(optional)</span></label>
+                <select id="block" name="block" disabled>
+                  <option value="">Select district first</option>
+                </select>
+                <p class="field-error" id="block-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required />
+                <p class="field-error" id="email-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="mobile">Mobile Number <span aria-hidden="true">*</span></label>
+                <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number" required />
+                <p class="field-help">Enter a number beginning with 5, 6, 7, 8 or 9.</p>
+                <p class="field-error" id="mobile-error" role="alert"></p>
+              </div>
+              <div class="field">
+                <label for="alternateContact">Alternate Contact Number <span class="optional">(optional)</span></label>
+                <input id="alternateContact" name="alternateContact" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit alternate number" />
+                <p class="field-error" id="alternateContact-error" role="alert"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section consent-section">
+            <legend><span class="section-number">02</span><span>Communication &amp; Documentation Consent</span></legend>
+            <p class="section-description">Please select one option for documentation during the event.</p>
+            <div class="radio-list">
+              <label class="radio-card"><input type="radio" name="documentationConsent" value="I consent to photographs/videos/audio recordings of me being taken during the event for documentation, reporting and communication related to the programme." /><span class="radio-mark"></span><span>I consent to photographs/videos/audio recordings of me being taken during the event for documentation, reporting and communication related to the programme.</span></label>
+              <label class="radio-card"><input type="radio" name="documentationConsent" value="I do not wish to be photographed/video recorded." /><span class="radio-mark"></span><span>I do not wish to be photographed/video recorded.</span></label>
+            </div>
+            <p class="field-error" id="documentationConsent-error" role="alert"></p>
+            <p class="privacy-note"><svg aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg><span><strong>Purpose:</strong> Data will only be used for the purpose of participation validation for the consultation.</span></p>
+          </fieldset>
+
+          <fieldset class="form-section signature-section">
+            <legend><span class="section-number">03</span><span>Digital Signature</span></legend>
+            <p class="section-description">Sign below using your finger, stylus or mouse.</p>
+            <div class="signature-panel">
+              <canvas id="signature-canvas" width="1200" height="300" aria-label="Digital signature drawing area"></canvas>
+              <span class="signature-placeholder" id="signature-placeholder" aria-hidden="false">Sign here</span>
+              <button type="button" class="clear-signature" id="clear-signature">Clear signature</button>
+            </div>
+            <p class="field-error" id="signature-error" role="alert"></p>
+            <div class="submission-date"><span>Submission date &amp; time</span><strong>Captured automatically when submitted</strong></div>
+          </fieldset>
+
+          <fieldset class="form-section submit-section">
+            <legend><span class="section-number">04</span><span>Submission</span></legend>
+            <div class="submit-row">
+              <div>
+                <p class="submit-title">Ready to register?</p>
+                <p class="submit-copy">Review your details before submitting the form.</p>
+              </div>
+              <button class="submit-button" id="submit-button" type="submit"><span>Submit Registration</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow"></use></svg></button>
+            </div>
+            <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="shell"><span>Child in Need Institute(CINI)</span></div></footer>
+  </body>
+</html>

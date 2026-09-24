@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CINI registration submission confirmation." />
+    <meta name="theme-color" content="#f6f1e8" />
+    <title>Registration Submitted | CINI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body class="thank-you-page">
+    <header class="success-header">
+      <a class="success-brand" href="index.html#top" aria-label="CINI registration home">
+        <img src="assets/cini-logo.png" alt="CINI" />
+      </a>
+    </header>
+
+    <main class="thank-you-main">
+      <section class="thank-you-panel" aria-labelledby="submission-title">
+        <div class="success-mark" aria-hidden="true">&#10003;</div>
+        <p class="section-kicker">Registration complete</p>
+        <h1 id="submission-title">Thank You!</h1>
+        <p>Your registration has been<br />successfully submitted.</p>
+        <p>We have received your registration<br />details successfully.</p>
+        <p class="thank-you-support">We look forward to<br />your participation.</p>
+        <p class="preview-notice" id="submission-notice" hidden></p>
+        <a class="submit-button thank-you-button" href="index.html#top">Back to Registration</a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="shell"><span>CINI: Child In Need Institute</span></div></footer>
+    <script>
+      const status = new URLSearchParams(window.location.search).get('status');
+      const notice = document.querySelector('#submission-notice');
+      if (status === 'offline') {
+        notice.innerHTML = '<strong>Registration service is not connected:</strong> Your details have not been sent or saved.';
+        notice.hidden = false;
+      } else if (new URLSearchParams(window.location.search).get('preview') === 'success') {
+        notice.innerHTML = '<strong>Preview mode:</strong> Your registration has not been sent or stored.';
+        notice.hidden = false;
+      }
+    </script>
+  </body>
+</html>

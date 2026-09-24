@@ -1,0 +1,7 @@
+{
+  "name": "cini-state-registration",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static CINI and NASCOM Foundation event registration form",
+  "scripts": { "dev": "npx serve .", "build": "node -e \"console.log('Static site: no build step required')\"" }
+}
