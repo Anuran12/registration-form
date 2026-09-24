@@ -8,10 +8,6 @@ export function validateForm(form) {
     if (!String(values[name] || '').trim()) errors[name] = 'This field is required.';
   });
 
-  if (values.state === 'Odisha' && !String(values.district || '').trim()) {
-    errors.district = 'This field is required.';
-  }
-
   if (values.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
     errors.email = 'Enter a valid email address.';
   }

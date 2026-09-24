@@ -61,7 +61,6 @@ function syncStateFields() {
   districtField.hidden = !isOdisha;
   blockField.hidden = !isOdisha;
   district.disabled = !isOdisha;
-  district.required = isOdisha;
 
   if (!isOdisha) {
     district.value = '';

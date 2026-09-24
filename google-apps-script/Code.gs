@@ -50,7 +50,7 @@ const STATES = Object.freeze([
   'Jharkhand',
   'Delhi',
   'West Bengal',
-  'Asham',
+  'Assam',
 ]);
 
 const DISTRICT_BLOCKS = Object.freeze({
@@ -198,10 +198,10 @@ function validatePayload_(payload) {
     throw new Error('Select a valid state.');
   }
   if (registration.state === 'Odisha') {
-    if (!Object.prototype.hasOwnProperty.call(DISTRICT_BLOCKS, registration.district)) {
+    if (registration.district && !Object.prototype.hasOwnProperty.call(DISTRICT_BLOCKS, registration.district)) {
       throw new Error('Select a valid district.');
     }
-    if (registration.block && DISTRICT_BLOCKS[registration.district].indexOf(registration.block) === -1) {
+    if (registration.block && (!registration.district || DISTRICT_BLOCKS[registration.district].indexOf(registration.block) === -1)) {
       throw new Error('Select a valid block for the district.');
     }
   } else {
